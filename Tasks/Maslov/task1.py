@@ -9,7 +9,9 @@ procent = 15
 god = 1825
 a = 365
 f = (depozit * procent * god / a) / 100
-print(f)
+c = f + depozit
+print(c)
+
 
 
 
