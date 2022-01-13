@@ -1,6 +1,9 @@
-p = 20000
-n = 0.15
-t = 12*5
+import decimal
 
-d = p * (1 + n/12)**t
+p = decimal.Decimal(20000)
+n = decimal.Decimal(0.15)
+
+t = 12 * 5
+
+d = p * (1 + n / 12) ** t
 print(d)
