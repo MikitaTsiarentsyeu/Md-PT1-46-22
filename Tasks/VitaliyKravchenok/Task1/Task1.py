@@ -4,6 +4,5 @@ p = Decimal("20000")
 n = Decimal("15")
 t = Decimal("5")
 d = Decimal(p*((1 + n/100/12)**60))
-d = d.quantize(Decimal("1.00"))
 
-print(d, "BYN")
+print(d.quantize(Decimal("1.00")), "BYN")
