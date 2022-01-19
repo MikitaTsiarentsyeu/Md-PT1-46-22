@@ -75,8 +75,7 @@ elif y > 0 and y < 30:
         if x >=0 and x <=12:
             print(minutes[y-1], "минут", case123list[x])
         elif x >12 and x <=23:
-            print(minutes[y-1], "минут", case123list[x-12])
-            
+            print(minutes[y-1], "минут", case123list[x-12])          
 elif y > 30 and y < 45:
     if y == 31 or y == 41:
         if x >=0 and x <=12:
