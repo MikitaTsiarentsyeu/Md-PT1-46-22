@@ -35,9 +35,9 @@ elif m == 0:
     print(d_hours1[h], 'ровно') 
 elif m == 30:
     print('половина', d_hours3[h])
-elif m <= 20:
+elif m <= 20 or m == 40:
     print(m_minutes1[m], 'минут(а,ы)', d_hours3[h])
-elif m > 20 and m < 45:
+elif m > 20 and m < 45 and m != 40:
     print(m_minutes1[(m // 10) * 10], m_minutes1[m % 10], 'минут(а,ы)', d_hours3[h])
 else:
     print('без', m_minutes2[60 - m], 'минут(ы)', d_hours2[h + 1])
