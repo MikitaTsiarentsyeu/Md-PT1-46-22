@@ -44,6 +44,14 @@ h = int(time[0])
 
 h1 = h
 h = h - 12 if h > 11 else h
+minutes = ''
+
+if min == 1 or min == 21 or min == 31 or min == 41:
+    minutes = 'минута'
+elif 1 < min < 5 or 21 < min < 25 or 31< min <35 or 41 < min < 45:
+    minutes = 'минуты'
+elif 4 < min < 20 or 24 < min < 30 or 34 < min < 40 or 44 < min <59:
+    minutes = 'минут'
 
 if min == 0:
     h1 = h1 - 12 if h1 > 12 else h1
@@ -58,26 +66,14 @@ if min == 0:
         print(f'{n2w_h[h1][0]} час{end} ровно')
 
 elif min < 30 or 30 < min < 45:
-    if min == 1:
-        print(f'{n2w_m[min][0]} минута {n2w_h[h+1][1]}')
-    elif 1 < min < 5:
-        print(f'{n2w_m[min][0]} минуты {n2w_h[h+1][1]}')
-    elif 4 < min < 20:
-        print(f'{n2w_m[min][0]} минут {n2w_h[h+1][1]}')
-    elif  min == 20 or min == 40:
-        print(f'{n2w_m[min][0]} минут {n2w_h[h+1][1]}')
-    elif min == 21 or min == 31 or min == 41:
-        print(f'{n2w_m[min-min%10][0]} {n2w_m[min%10][0]} минута {n2w_h[h+1][1]}')
-    elif 21 < min < 25 or 31< min <35 or 41 < min < 45:
-        print(f'{n2w_m[min - min%10][0]} {n2w_m[min%10][0]} минуты {n2w_h[h+1][1]}')
-    elif 24 < min < 30 or 34 < min < 40:
-        print(f'{n2w_m[min - min%10][0]} {n2w_m[min%10][0]} минут {n2w_h[h+1][1]}')
+    if 0 < min < 21 or min == 40:
+        print(f'{n2w_m[min][0]} {minutes} {n2w_h[h+1][1]}')
+    elif 20 < min < 45:
+        print(f'{n2w_m[min - min%10][0]} {n2w_m[min%10][0]} {minutes} {n2w_h[h+1][1]}')
 
 elif int(min) == 30:
     print(f'половина {n2w_h[h+1][1]}')
 
 elif min >= 45:
-    if min == 59:
-        print(f'без {n2w_m[60-min][1]} минуты {n2w_h[h+1][0]}')
-    else:
-        print(f'без {n2w_m[60-min][1]} минут {n2w_h[h+1][0]}')
+    print(f'без {n2w_m[60-min][1]} {minutes} {n2w_h[h+1][0]}')
+    
