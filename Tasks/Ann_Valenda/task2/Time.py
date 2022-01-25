@@ -81,7 +81,6 @@ if __name__ == '__main__':
             test_dt = time.fromisoformat(test_time)
             try:
                 convert_time(test_dt)
-
             except KeyError:
                 print(f'error in {test_time}')
             print()
