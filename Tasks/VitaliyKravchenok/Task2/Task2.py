@@ -18,7 +18,7 @@ m_minutes1 = {1: 'одна', 2: 'две', 3: 'три', 4: 'четыре', 5: 'п
 m_minutes2 = {1: 'одной', 2: 'двух', 3: 'трёх', 4: 'четырёх', 5: 'пяти', 6: 'шести', 7: 'семи', 8: 'восеми', 9: 'девяти', 
 10: 'десяти', 11: 'одиннадцати', 12: 'двенадцати', 13: 'тринадцати', 14: 'четырнадцати', 15: 'пятнадцати'}
 
-t = input("Input \'n\' for print real time or input \'s\' for print self time")
+t = input("Input 'n' for print real time or input 's' for print self time")
  
 if "s" in t:
     h = int(input("Please input hours 0-24"))
