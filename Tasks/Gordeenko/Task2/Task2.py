@@ -75,8 +75,9 @@ if x == 0: # automatic
         print(f"без {minute_3[0]} минут{minute_4[0]} {hour_3[0]}")
     else: print("error")
 if x==1: # user 
-    h = int(input("Please enter the time in hour and minute format (hh):"))
-    m = int(input("Please enter the time in hour and minute format (mm):"))
+    hh,mm = input("Please enter the time in hour and minute format hh:mm - 4 numbers across (:) ").split(":")
+    h = int(hh)
+    m = int(mm)
     if h>=0 and m == 0: # время ровно
         hour = d.get(h)
         hour_2 = d_2.get(h)
