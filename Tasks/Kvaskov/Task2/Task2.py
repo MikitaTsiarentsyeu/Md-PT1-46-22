@@ -39,9 +39,7 @@ if Yourchoice == 0 or Yourchoice == 1:
         else:
             print("out of range")
     else:
-        t1 = int(input("Введите часы в формате 00 = "))
-        t2 = int(input("Введите минуты в формате 00 = "))
-        time1 = (t1,t2)
+        t1, t2 = map(int, input("Введите время в формате 00 00 = ").split())
         if t1 >= 0 and t1 <24 and t2 >=0 and t2 < 59:
             if  t2 == 0:
                 tx = print(dt1[t1], " " + h1[t1], " " + h2[0])
