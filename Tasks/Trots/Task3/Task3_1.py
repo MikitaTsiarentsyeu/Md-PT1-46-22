@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 check_string = input("Enter the string: ")
-n = int(input("Enter the required number of items to display: "))
+n = str(input("Enter the required number of items to display: ")).strip()
+while not n.isdigit():
+    n = str(input("Please enter a numeric value: ")).strip()
 
+n = int(n)
 count = {}
 
 for i in check_string:
