@@ -15,7 +15,7 @@ for i in check_string:
         count[i] = 1
 
 list_count = (list(count.items()))
-list_count.sort(key=lambda y: y[1], reverse=True)
+list_count.sort(key=lambda y: -y[1])
 
 print(f"The string: {check_string}")
 
