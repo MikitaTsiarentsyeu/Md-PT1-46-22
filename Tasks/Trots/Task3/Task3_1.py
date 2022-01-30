@@ -27,4 +27,3 @@ else:
     print(f"Bro, we have only {len(list_count)} different elements, here they are:")
     for x in range(len(list_count)):
         print(f"'{list_count[x][0]}' meets in the string {list_count[x][1]} times")
-
