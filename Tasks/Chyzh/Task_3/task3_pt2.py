@@ -13,5 +13,6 @@ l.sort(key = lambda i: i[1])
 print(l)
 L = len(l)
 lmod = l[L-N:L]
-for i in lmod:  
+for i in lmod:
+    lmod.sort(key = lambda i: i[1])  # sort by alphabet
     print(i[0], "встречается", i[1], "раза")
