@@ -1,5 +1,4 @@
-
-s = input("Enter string consist of different letters more than 3 symbols length: ")
+s = input("Enter text: ")
 while len(s) <= 3:
     s = input("Enter string consist of different letters more than 3 symbols length: ")
 N = int(input("Enter the number of symbol you want to check repeated: "))
@@ -18,6 +17,7 @@ L = len(l)
 lmod = l[L-N:L]
 for i in lmod:  
     print(i[0], "встречается", i[1], "раза")
+
 
 
 
