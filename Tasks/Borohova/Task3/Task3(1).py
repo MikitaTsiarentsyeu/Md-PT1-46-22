@@ -17,3 +17,6 @@ while a1 > 0:
     item = sorted_dict.popitem()
     print("{} встречается {} раз".format(item[0], item[1]))
     a1 -= 1
+
+    if len(sorted_dict) < 1:
+        break
