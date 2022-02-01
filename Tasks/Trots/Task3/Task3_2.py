@@ -2,23 +2,23 @@
 
 check_text = input("Enter the text: ")
 
-n = str(input("Enter the required number of words to display: ")).strip()
+n = (input("Enter the required number of words to display: ")).strip()
 while not n.isdigit():
-    n = str(input("Please enter a numeric value: ")).strip()
+    n = (input("Please enter a numeric value: ")).strip()
 
 list_words = ((''.join(e for e in check_text if (e.isalpha() or e == " "))).lower()).split(" ")
 n = int(n)
-count = {}
+count_words= {}
 
 for i in list_words:
     if i == "":
         continue
-    elif i in count:
-        count[i] += 1
+    elif i in count_words:
+        count_words[i] += 1
     else:
-        count[i] = 1
+        count_words[i] = 1
 
-list_count = (list(count.items()))
+list_count = (list(count_words.items()))
 list_count.sort(key=lambda y: (-y[1], y[0]))
 
 print(f"The text: {check_text}")

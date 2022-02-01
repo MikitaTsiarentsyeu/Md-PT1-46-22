@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 
 check_string = input("Enter the string: ")
-n = str(input("Enter the required number of items to display: ")).strip()
+n = (input("Enter the required number of items to display: ")).strip()
 while not n.isdigit():
-    n = str(input("Please enter a numeric value: ")).strip()
+    n = (input("Please enter a numeric value: ")).strip()
 
 n = int(n)
-count = {}
+count_el = {}
 
 for i in check_string:
-    if i in count:
-        count[i] += 1
+    if i in count_el:
+        count_el[i] += 1
     else:
-        count[i] = 1
+        count_el[i] = 1
 
-list_count = (list(count.items()))
+list_count = (list(count_el.items()))
 list_count.sort(key=lambda y: -y[1])
 
 print(f"The string: {check_string}")
