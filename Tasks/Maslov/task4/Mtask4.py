@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 with open('text.py.txt', 'r+', encoding='utf-8') as f:
     s = f.readlines()
     print(s)
@@ -20,7 +20,3 @@ for i in s:
         b += j
         c += len(j)
     print(b)
-=======
-with open('mtext.txt','r') as f:
-    print(f.readline())
->>>>>>> Stashed changes
