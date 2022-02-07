@@ -9,15 +9,15 @@ while True:
             print("Input Error!!Value must be over 35! Try again!")
     else:
         print("Input Error!!Please, enter a numeric value!")
-        
+
 text = ""
 
-with open("text2.txt", 'r', encoding="utf-8") as file:    
+with open("text2.txt", 'r', encoding="utf-8") as file:
     for line in file:
         text += line
 
-text_1 = '' 
-c = 0  
+text_1 = ''
+c = 0
 
 for i in text.split():
     c += len(i)
@@ -36,11 +36,11 @@ for i in range(len(text_Strings)):
     symbols = list(text_Strings[i])
     while len(symbols) < n and spaces != 0:
         for j in range(len(symbols) + spaces):
-            if symbols[j-1] == " ":
+            if symbols[j - 1] == " ":
                 continue
             if symbols[j] == " ":
                 symbols.insert(j, " ")
-            if (len(symbols) == n):
+            if len(symbols) == n:
                 break
     text_Strings[i] = "".join(symbols)
 
@@ -49,4 +49,4 @@ new_text = "\n".join(text_Strings)
 with open("textformat.txt", 'w', encoding="utf-8") as file:
     file.write(new_text)
 if file.closed:
-    print("Bro, your formated text is ready! File name is textformat.txt")
+    print("Bro, your formatted text is ready! File name is textformat.txt")
