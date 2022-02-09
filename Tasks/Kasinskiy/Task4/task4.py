@@ -3,7 +3,6 @@ while True:
     if s <= 35:
         print('you must enter an integer > 35')
         continue
-
     break
 with open("text.txt", "r") as f:
     flag = True
@@ -18,7 +17,6 @@ with open("text.txt", "r") as f:
             m = t.split()
             m.pop()
         t1 = " ".join(m)
-
         pos = pos + len(t1)
         f.seek(pos)
         count = s - len(t1)
