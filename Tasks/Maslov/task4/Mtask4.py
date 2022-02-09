@@ -1,8 +1,4 @@
 
-with open('mtext.txt', 'r', encoding='utf-8') as f:
-    f = f.readlines()
-    print(f)
-
 while True:
     a = input('Введите максимальное количество символов в строке ,минимальное 35 :  ')
 
@@ -12,9 +8,10 @@ while True:
             print('минимальное 35')
             continue
     break
-   
-a = int(input('Введите максимальное количество символов в строке ,минимальное 35 :  '))
 
+with open('test.py.txt', 'r', encoding='utf-8') as f:
+    f = f.readlines()
+    print(f)
 b = ""
 c = 0
 for i in f:
@@ -28,6 +25,8 @@ for i in f:
         if c != 0:
             b += ' '
             c += 1
-        b += j
+        b += ' '+j
         c += len(j)
-    print(b)
+print(b)
+with open('result.txt', 'w', encoding='utf8') as result:
+    result.writelines(b)
