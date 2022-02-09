@@ -11,10 +11,19 @@ for d in c:
 
 from collections import Counter
 
-a = input()
-b = []
+a = input('Наберите текс : ')
+b = int(input('Введите сколько хотите резултатов видеть : '))
+e = []
+
+z = ["!", "(", ")", "/", ".", ",", "`", "-", "_", "?", "<", ">", "@", "#", "$", "%", "[", "]", "{", "}", "*", "^", ":",
+     ";"]
+for i in z:
+    if i in a:
+        a = a.replace(i, '')
 for i in a.split():
     c = ''
     c += i.lower()
-    b.append(c)
-print(Counter(b))
+    e.append(c)
+e = sorted(e)
+d = Counter(e).most_common(b)
+print(d)
