@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
 with open('mtext.txt', 'r', encoding='utf-8') as f:
     f = f.readlines()
     print(f)
@@ -13,6 +14,13 @@ while True:
             continue
     break
 
+=======
+with open('text.py.txt', 'r', encoding='utf-8') as f:
+    s = f.readlines()
+    print(s)
+    
+a = int(input('Введите максимальное количество символов в строке ,минимальное 35 :  '))
+>>>>>>> Stashed changes
 b = ""
 c = 0
 for i in f:
