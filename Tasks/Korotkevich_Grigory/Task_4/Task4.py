@@ -14,9 +14,9 @@ while True:
 
     break
 
-with open("text.txt", 'r', encoding= "cp1251") as f:
+with open("text.txt", 'r', encoding= "koi8-r") as f:
     line = f.readlines()
-    with open("Your_text.txt", 'w', encoding= "cp1251") as f:             
+    with open("Your_text.txt", 'w', encoding= "koi8-r") as f:             
         res = ""
         count = 0         
         for i in line:
