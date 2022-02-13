@@ -14,9 +14,9 @@ while True:
 
     break
 
-with open("text.txt", 'r', encoding= "utf8 ") as f:
+with open("text.txt", 'r', encoding= "koi8-r") as f:
     line = f.readlines()
-    with open("Your_text.txt", 'w', encoding= "utf8 ") as f:             
+    with open("Your_text.txt", 'w', encoding= "koi8-r") as f:             
         res = ""
         count = 0         
         for i in line:
@@ -45,4 +45,5 @@ with open("text.txt", 'r', encoding= "utf8 ") as f:
             j = j +"\n"                           
             f.writelines(j)        
 print("All your shenanigans in the file:'Your_text.txt'")
+
 
