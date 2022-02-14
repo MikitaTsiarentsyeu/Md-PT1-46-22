@@ -22,7 +22,16 @@ def is_prime(k):
             return False
     return True
 print(is_prime(int(input())))
-def get_ranges():pass
+def get_ranges():
+    b=[]
+    for i in range(10):
+        r = random.randint(1, 50)
+        if r not in b:
+            b.append(r)
+    return sorted(b)
+
+
+print(get_ranges())
   
 
 
