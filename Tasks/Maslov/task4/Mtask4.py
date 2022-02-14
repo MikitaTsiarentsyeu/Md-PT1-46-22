@@ -10,23 +10,20 @@ while True:
     break
 
 with open('test.py.txt', 'r', encoding='utf-8') as f:
-    f = f.readlines()
-    print(f)
-b = ""
-c = 0
-for i in f:
-    for j in i.split():
-        d = c + len(j)
-        if c != 0:
-            d += 1
-        if d > a:
-            b += '\n'
-            c = 0
-        if c != 0:
-            b += ' '
-            c += 1
-        b += ' '+j
-        c += len(j)
-print(b)
-with open('result.txt', 'w', encoding='utf8') as result:
-    result.writelines(b)
+   file = []
+
+with open('text.txt','r',encoding='utf8') as text:
+    for i in text:
+        i = i.split()
+        for j in i:
+            file.append(j)
+    print(file)
+with open('correct.txt','w',encoding='utf8') as finish: 
+    placeholder =''
+    for j in file:
+        while len(placeholder) + len(j+j) != a:
+            placeholder += ' ' + j
+            if len(placeholder)== a:
+                placeholder +='\n'
+            else:
+                finish.writelines(placeholder+'\n')
