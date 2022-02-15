@@ -22,16 +22,32 @@ def is_prime(k):
             return False
     return True
 print(is_prime(int(input())))
-def get_ranges():
-    b=[]
-    for i in range(10):
-        r = random.randint(1, 50)
-        if r not in b:
-            b.append(r)
-    return sorted(b)
 
 
-print(get_ranges())
+a=[]
+for i in range(10):
+    r = random.randint(1, 50)
+    if r not in a:
+        a.append(r)
+def get_range(a):
+    a.sort()
+    receiving = f'{a[0]}'
+    passage = False
+    for index in range(len(a) - 1):
+        if a[index + 1] - a[index] == 1:
+            passage = True
+        else:
+            if passage:
+                receiving += f'-{a[index]}, {a[index + 1]}'
+            else:
+                receiving += f', {a[index + 1]}'
+            passage = False
+    if passage:
+        receiving += f'-{a[-1]}'
+    return print(receiving)
+
+get_range(a)
+
   
 
 
