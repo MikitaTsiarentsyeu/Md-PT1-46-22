@@ -17,6 +17,7 @@ import os
 
 with open (os.path.join(os.getcwd(), "Task4", "text.txt"), 'r', encoding="utf8") as f:
     f.seek(0)
+<<<<<<< Updated upstream
     for l in f:
         #print(repr(l))
         text = list(f.read().split())
@@ -41,4 +42,26 @@ with open (os.path.join(os.getcwd(), "Task4", "text_new.txt"), 'w', encoding="ut
 
 
 
+=======
+    a = f.read(user_input)
+    print(a)
+    
+    for l in f:
+        l.split()
+        z = 0
+        for i in l:
+            z += 1
+            print(i, end ="")
+            if (z>= user_input) and (i == " "):
+                z = 0
+                print('\r')
+
+
+with open (os.path.join(os.getcwd(), "Task4", "text_new.txt"), 'w', encoding="utf8") as f:
+    f.seek(0)
+    f.writelines(l)
+
+    
+print("\nDear user! The text is written to a new file 'text_new.txt' ")
+>>>>>>> Stashed changes
 
