@@ -1,19 +1,37 @@
 from functools import reduce
 
-list1 = [1, 2, [2, 4, [[7, 8], 4, 6]]]
+list1 = [1, 2, [2, 4, [2, 8], [[7, 8], 4, 6]]]
+list2 = [7, [[[[2]]], [[[]], [4]], [4, 5, [6, 7]]], 8]
 
 
-def sum_l(lst: list) -> int:
-    s = 0
+def suml_1(lst: list, s=0) -> int:
     for el in lst:
-        if type(el) == list:
-            s += sum_l(el)
+        if isinstance(el, list):
+            s += suml_1(el)
         else:
             s += el
     return s
 
 
-print(f"Sum of elements - : {sum_l(list1)}")
+print(f"Sum of elements - : {suml_1(list1)}")
+
+
+def suml_2(lst: list, res=None) -> int:
+    if res is None:
+        res = []
+    for el in lst:
+        suml_2(el, res) if isinstance(el, list) else res.append(el)
+    return sum(res)
+
+
+print(f"Sum of elements - : {suml_2(list1)}")
+
+
+def suml_3(lst: list):
+    return reduce(lambda a, b: a.extend(suml_3(b)) or a if isinstance(b, list) else a.append(b) or a, lst, [])
+
+
+print(f"Sum of elements - : {sum(suml_3(list1))}")
 
 
 def fib(n: int) -> list:
