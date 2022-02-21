@@ -14,16 +14,27 @@ print('Сумма элементов -',sum_element_in_list([1, 2, [2, 4, [[7, 8
 # Примеры вызова: 
 # fib(5) -> 0,1,1,2,3
 # fib(10) -> 0,1,1,2,3,5,8,13,21,34
-def print_fibonacci_numbers(number):
+def first_fibon_n(number): 
     f1 = 0
     f2 = 1
     if (number < 1):
-        return
+        return f1 
     print(f1, end=" ")
     for items in range(1, number):
         print(f2, end=" ")
         next = f1 + f2
         f1 = f2
         f2 = next
-print(print_fibonacci_numbers(5))
-print(print_fibonacci_numbers(10))
+first_fibon_n(5)
+first_fibon_n(10)
+
+def fib(number):
+    if number == 1:
+        return [0]
+    elif number == 2:
+        return [0, 1]
+    else:
+        output = fib(number-1)
+        return output + [output[-1] + output[-2]]
+print(fib(5))
+print(fib(10))
