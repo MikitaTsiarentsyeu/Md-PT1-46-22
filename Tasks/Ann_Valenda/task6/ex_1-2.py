@@ -43,7 +43,7 @@ def fib(n: int):
 
 
 print(fib(30))
-print(fib(10))
+print(fib(20))
 print(fib(1))
 print(fib(0))
 # _______________var2_____________________ if output is n first numbers, how in example
