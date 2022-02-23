@@ -1,18 +1,14 @@
-#Task 3_2 without sorted()
-#Check, please, if you have time
 text = input('Please, enter your text: ')
 num = int(input('Enter the number of words to show: '))
-text1 = text.lower()
-punctuation_marks = "!()-[]\{\};?@#$%:'\"\,./^&;*_"
+text_low = text.lower()
+punct_marks = "!()-[]\{\};?@#$%:'\"\,./^&;*_"
 
-for i in text1:
-    if i in punctuation_marks:
-        text1 = text1.replace(i, '')
+for i in text_low:
+    if i in punct_marks:
+        text_low = text_low.replace(i, '')
 
-l = [i for i in text1.split() if not i.isdigit()]
+l = [i for i in text_low.split() if not i.isdigit()]
 
-#It looks terrible but couldn't come up with a better idea without sorted() and functions in general
-#sorting in alphabetical order 
 flag = True
 while flag:
     flag = False
@@ -25,19 +21,16 @@ while flag:
             elif l[i][j]<l[i+1][j]:
                 break
             
-#counting the number of words in the text
-words_dict = {}
+dict_words = {}
 
 for word in l:
-    if word not in words_dict:
-        words_dict[word] = 1
+    if word not in dict_words:
+        dict_words[word] = 1
     else:
-        words_dict[word]+=1
+        dict_words[word]+=1
 
-words = [[k,v] for k,v in words_dict.items()]
+words = [[k,v] for k,v in dict_words.items()]
 
-
-#Sorting numbers
 
 for i in range(1,len(words)):
     for j in range(i,0,-1):
@@ -45,8 +38,6 @@ for i in range(1,len(words)):
             words[j], words[j-1] = words[j-1], words[j]
         else:
             break
-
-#Displaying the data to the user
 
 if num > len(words):
     num = len(words)
