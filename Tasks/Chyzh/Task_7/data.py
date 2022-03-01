@@ -1,9 +1,22 @@
 """TO DO: IMPLEMENT FACTORY FOR MAIN METHODS"""
 
-repo = {1 : ("some name", ["25646547", "5465472"]), 2 : ("test name", ["6576575"])}
+repo = {1 : (["electronics", "PC"], ["2602111", "400"]), 
+        2 : (["electronics", "notebook"], ["2602112", "700"]),
+        3 : (["electronics", "smartphone"], ["2602113", "500"]),
+        4 : (["electronics", "TV"], ["2602114", "1100"]),
+        5 : (["network", "router"], ["2802111", "50"]),
+        6 : (["network", "switch"], ["2802112", "300"]),
+        7 : (["network", "POEinjector"], ["2802113", "30"]),
+        8 : (["tools", "drill"], ["2202111", "200"]),
+        9 : (["tools", "screwdriver"], ["2202112", "100"]),
+        10 : (["tools", "milling_machine"], ["2202113", "400"]),
+        11 : (["tools", "planer"], ["2202114", "150"])
+        }
 
-def get_all_contacts():
-    return repo.values()
+
+def get_all_products():
+    for i in repo:
+        return repo.items(i[0])
 
 def add_contact(name, *phones):
     try:

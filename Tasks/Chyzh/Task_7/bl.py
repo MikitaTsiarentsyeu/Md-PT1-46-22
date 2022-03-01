@@ -1,7 +1,7 @@
 import data
 
 def get_all():
-    contacts = data.get_all_contacts()
+    contacts = data.get_all_products()
     return '\n'.join([f"{c[0]}: {','.join(c[1])}" for c in contacts])
 
 def add_contact(name, *phones):
