@@ -1,42 +1,48 @@
 """TO DO: IMPLEMENT FACTORY FOR MAIN METHODS"""
 
-repo = {1 : (["electronics", "PC"], ["2602111", "400"]), 
-        2 : (["electronics", "notebook"], ["2602112", "700"]),
-        3 : (["electronics", "smartphone"], ["2602113", "500"]),
-        4 : (["electronics", "TV"], ["2602114", "1100"]),
-        5 : (["network", "router"], ["2802111", "50"]),
-        6 : (["network", "switch"], ["2802112", "300"]),
-        7 : (["network", "POEinjector"], ["2802113", "30"]),
-        8 : (["tools", "drill"], ["2202111", "200"]),
-        9 : (["tools", "screwdriver"], ["2202112", "100"]),
-        10 : (["tools", "milling_machine"], ["2202113", "400"]),
-        11 : (["tools", "planer"], ["2202114", "150"])
+repo = {1 : ("electronics", "PC", "2602111", "400"), 
+        2 : ("electronics", "notebook", "2602112", "700"),
+        3 : ("electronics", "smartphone", "2602113", "500"),
+        4 : ("electronics", "TV", "2602114", "1100"),
+        5 : ("network", "router", "2802111", "50"),
+        6 : ("network", "switch", "2802112", "300"),
+        7 : ("network", "POEinjector", "2802113", "30"),
+        8 : ("tools", "drill", "2202111", "200"),
+        9 : ("tools", "screwdriver", "2202112", "100"),
+        10 : ("tools", "milling_machine", "2202113", "400"),
+        11 : ("tools", "planer", "2202114", "150")
         }
 
 
 def get_all_products():
-    for i in repo:
-        return repo.items(i[0])
+    for v in range(1, len(repo)+1):
+        print(f"{repo[v][1]} - {repo[v][3]}$ in [{repo[v][0]}]")
+def show_categories():
+    for v in range(1, len(repo)+1):
+        if v != v:
+            print(f"{repo[v][0]}")
+        else:
+            return None
 
-def add_contact(name, *phones):
-    try:
-        new_contact = (name, list(phones))
-        for i in range(1, len(repo)+2):
-            if i not in repo:
-                repo[i] = new_contact
-        return True
-    except:
-        return False
+# def add_contact(name, *phones):
+#     try:
+#         new_contact = (name, list(phones))
+#         for i in range(1, len(repo)+2):
+#             if i not in repo:
+#                 repo[i] = new_contact
+#         return True
+#     except:
+#         return False
 
-def add_phone(name, phone):
-    for v in repo.values():
-        if v[0] == name:
-            if phone not in v[1]:
-                v[1].append(phone)
-                return True
-            else:
-                return False
-    raise NameError("No such name in the phone book")
+# def add_phone(name, phone):
+#     for v in repo.values():
+#         if v[0] == name:
+#             if phone not in v[1]:
+#                 v[1].append(phone)
+#                 return True
+#             else:
+#                 return False
+#     raise NameError("No such name in the phone book")
 
 def remove_contact(name):
     for k, v in repo.items():
