@@ -1,4 +1,4 @@
-"""TO DO: IMPLEMENT FACTORY FOR MAIN METHODS"""
+
 
 repo = {1 : ("electronics", "PC", "2602111", "400"), 
         2 : ("electronics", "notebook", "2602112", "700"),
@@ -18,11 +18,15 @@ def get_all_products():
     for v in range(1, len(repo)+1):
         print(f"{repo[v][1]} - {repo[v][3]}$ in [{repo[v][0]}]")
 def show_categories():
+    list1 = []
+    list2 = []
     for v in range(1, len(repo)+1):
-        if v != v:
-            print(f"{repo[v][0]}")
-        else:
-            return None
+        if v == v:
+            list1.append(repo[v][0])
+    for i in list1:
+        if i not in list2:
+            list2.append(i)
+    print('\n'.join(list2))
 
 # def add_contact(name, *phones):
 #     try:
