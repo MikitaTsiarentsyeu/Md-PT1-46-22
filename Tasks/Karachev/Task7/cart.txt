@@ -1,0 +1,3 @@
+Hamster: description - grey, code - 2955, price - 10 byn
+Bird food: description - 1000 g, code - 4544, price - 6 byn
+Hamster food: description - 450 g, code - 4855, price - 20 byn
