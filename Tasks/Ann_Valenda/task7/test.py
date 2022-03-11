@@ -6,7 +6,6 @@ class TestData(unittest.TestCase):
         import data
         self.data = data
 
-
         base = {
             'wh': [
                 {'product_id': 'f123454-888', 'category': 'fruit', 'product_name': 'apples', 'price': 2, 'quantity': 54},
@@ -38,7 +37,6 @@ class TestData(unittest.TestCase):
         self.assertEqual(len(self.data.get_wh_products()), 2)
 
     def test_get_wh_product_by_id(self):
-
         self.assertTrue(self.data.get_wh_product_by_id('f123454-888') == self.test_dict)
         self.assertIsNone(self.data.get_wh_product_by_id(''))
 
@@ -63,28 +61,35 @@ class TestData(unittest.TestCase):
         self.assertEqual(temp_data[0], self.test_dict)
 
     def test_set_wh_products_value(self):
-        self.data.set_wh_products_value('f123454-888', 30)
+        self.data.change_wh_products_value('f123454-888', 30)
         d = self.data.get_wh_product_by_id('f123454-888')
-        self.assertEqual(d['quantity'], 30)
+        self.assertEqual(d['quantity'], 84)
+        self.data.change_wh_products_value('f123454-888', -20)
+        d = self.data.get_wh_product_by_id('f123454-888')
+        self.assertEqual(d['quantity'], 64)
 
     def test_add_cart_products(self):
         self.data.add_product_to_cart('f123454-888')
         self.assertEqual(len(self.data.base['cart']), 1)
-        self.assertEqual(self.data.base['cart'][0], self.test_dict)
+        self.assertEqual(self.data.base['cart'][0]['quantity'], 0)
+        self.assertEqual(self.data.base['cart'][0]['product_name'], 'apples')
 
     def test_add_order_products(self):
-        self.data.add_orders_products('f123454-888')
+        self.data.add_product_to_cart('f123454-888')
+        self.data.copy_cart_to_order()
         self.assertEqual(len(self.data.base['orders']), 1)
-        self.assertEqual(self.data.base['orders'][0], self.test_dict)
+        self.assertEqual(self.data.base['orders'][0]['quantity'], 0)
+        self.assertEqual(self.data.base['orders'][0]['product_name'], 'apples')
 
     def test_set_cart_products_value(self):
         self.data.add_product_to_cart('f123454-888')
-        self.data.set_cart_products_value('f123454-888', 30)
+        self.data.change_cart_products_value('f123454-888', 30)
         self.assertEqual(self.data.base['cart'][0]['quantity'], 30)
 
     def test_set_orders_products_value(self):
-        self.data.add_orders_products('f123454-888')
-        self.data.set_orders_products_value('f123454-888', 30)
+        self.data.add_product_to_cart('f123454-888')
+        self.data.copy_cart_to_order()
+        self.data.change_orders_products_value('f123454-888', 30)
         self.assertEqual(self.data.base['orders'][0]['quantity'], 30)
 
     def test_delete_cart_product(self):
@@ -101,7 +106,8 @@ class TestData(unittest.TestCase):
         self.assertEqual(len(self.data.base['cart']), 0)
 
     def test_clear_orders_products(self):
-        self.data.add_orders_products('f123454-888')
+        self.data.add_product_to_cart('f123454-888')
+        self.data.copy_cart_to_order()
         self.assertEqual(len(self.data.base['orders']), 1)
         self.data.clear_orders_products()
         self.assertEqual(len(self.data.base['orders']), 0)
@@ -110,28 +116,25 @@ class TestData(unittest.TestCase):
         self.data.add_product_to_cart('f123454-888')
         self.assertEqual(len(self.data.base['cart']), 1, 'cart is empty')
         self.assertEqual(len(self.data.base['orders']), 0, 'orders do not empty')
-        self.data.copy_cart_to_orders()
+        self.data.copy_cart_to_order()
         self.assertEqual(len(self.data.base['cart']), 1, 'cart is empty')
         self.assertEqual(len(self.data.base['orders']), 1, 'orders is empty')
-
-        self.assertEqual(self.data.get_order_products()[0], self.test_dict)
+        self.assertEqual(self.data.get_order_products()[0]['quantity'], 0)
+        self.assertEqual(self.data.get_order_products()[0]['product_name'], 'apples')
 
     def test_get_id_by_products(self):
         product_id = self.data.get_id_by_product_name('apples')
         self.assertEqual(product_id, 'f123454-888')
 
+    def test_get_wh_product_quantity_by_id(self):
+        quantity = self.data.get_wh_product_quantity_by_id('f123454-888')
+        self.assertEqual(quantity, 54)
 
-
-class TestBL(unittest.TestCase):
-    def setUp(self) -> None:
-        import bl
-        self.bl = bl
-
-    def test_add_product_to_cart(self):
-        self.bl.data.add_product_to_cart('f123454-888')
-        self.bl.data.set_cart_products_value('f123454-888', delta=+4)
-        self.bl.data.set_wh_products_value('f123454-888', delta=-4)
-
+    def test_get_cart_product_quantity_by_id(self):
+        self.data.add_product_to_cart('f123454-888')
+        self.data.change_cart_products_value('f123454-888', 2)
+        quantity = self.data.get_cart_product_quantity_by_id('f123454-888')
+        self.assertEqual(quantity, 2)
 
 
 if __name__ == "__main__":
