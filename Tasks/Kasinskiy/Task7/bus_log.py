@@ -112,6 +112,7 @@ def searc_inquiry(inquiry, list_name=[]):
     list_name.clear()
     return id_products
 
+
 def validation_search(inquiry):
     try:
         if len(inquiry) < 4:

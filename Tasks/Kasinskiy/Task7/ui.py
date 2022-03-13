@@ -22,9 +22,7 @@ def choose_product(key):
 
 
 def add_recycle(key_id, numbers):
-
     res = bus_log.add_recycle(key_id, numbers)
-
     show_data(res)
 
 
@@ -33,9 +31,6 @@ def show_recycle():
     if isinstance(res, list):
         show_data(*res)
     return res
-
-
-
 
 
 def search(inquiry):
@@ -74,6 +69,7 @@ def menu():
             continue
         break
 
+
 def second_menu():
     show_data("Выберите категорию товара или вернитесь в меню:")
     show_catalog()
@@ -88,11 +84,8 @@ def second_menu():
         submenu(res)
 
 
-
 def submenu(res):
-
     choose_model = show_query("Добавте нужную модель в корзину или вернитесь в меню выбора категорий:\n")
-
     if choose_model.isdigit() == True and  0 < int(choose_model) <= len(res):
         if int(choose_model) == len(res):
             second_menu()
