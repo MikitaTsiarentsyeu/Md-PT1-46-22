@@ -1,0 +1,38 @@
+body {color: crimson;}
+
+p { color: red; } 
+a { color: blue; } 
+
+h1 {color:cornflowerblue}
+
+#main_headline {background-color:cadetblue}
+
+.headline {background-color: chartreuse;}
+
+a:visited {background-color: cyan;}
+
+.header {   background-color:azure;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: space-between;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+.content {display: flex;
+    justify-content: space-evenly;}
+
+.left { background-color: cadetblue;}
+
+.center { background-color:bisque;}
+
+.right { background-color: darkblue;}
+
+.footer { background-color: khaki;
+    display: flex;
+    justify-content: space-evenly;}
+
+#logo { margin-left: 3%;}
+
+#login { margin-right: 3%;}
