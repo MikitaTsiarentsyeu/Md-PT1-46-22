@@ -1,0 +1,16 @@
+ {
+"wh": [
+    {"product_id": "f123454", "category": "fruits", "product_name": "apples", "price": 2, "quantity": 54},
+    {"product_id": "f543221", "category": "fruits", "product_name": "bananas", "price": 1.5, "quantity": 45},
+    {"product_id": "f787543", "category": "fruits", "product_name": "oranges", "price": 2.50, "quantity": 23},
+    {"product_id": "f234876", "category": "fruits", "product_name": "mangoes", "price": 8, "quantity": 8},
+    {"product_id": "d999564", "category": "drinks", "product_name": "soda", "price": 1, "quantity": 12},
+    {"product_id": "d343255", "category": "drinks", "product_name": "juice", "price": 2.30, "quantity": 33},
+    {"product_id": "d342657", "category": "drinks", "product_name": "water", "price": 0.80, "quantity": 100},
+    {"product_id": "a532870", "category": "alcohol", "product_name": "wine", "price": 15, "quantity": 6},
+    {"product_id": "a360094", "category": "alcohol", "product_name": "beer", "price": 3, "quantity": 26},
+    {"product_id": "a022343", "category": "alcohol", "product_name": "gin", "price": 20, "quantity": 3}
+],
+"cart": [],
+"orders": []
+    }
