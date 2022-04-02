@@ -14,14 +14,14 @@ def show_all_spare_parts():
     show_data(data)
 
 
-def show_category_spare_parts_kyzov():
-    category = bl.get_category_spare_part_kyzov()
+def show_category_spare_parts():
+    category = bl.get_category_spare_part()
     show_data(category)
 
 
-def show_category_spare_parts_kpp():
-    category = bl.get_category_spare_part_kpp()
-    show_data(category)
+def dob():
+    res = bl.get_dob()
+    show_data(res)
 
 
 def show_remais():
@@ -34,16 +34,6 @@ def show_basket():
     show_data(baskets)
 
 
-def show_basket1():
-    baskets = bl.get_basket1()
-    show_data(baskets)
-
-
-def show_basket2():
-    baskets = bl.get_basket2()
-    show_data(baskets)
-
-
 def checkout():
     cat = show_query("1.Оформить заказ?:\n")
     full_name = show_query("Имя,фамилия:")
@@ -53,25 +43,11 @@ def checkout():
     show_data(zakaz)
 
 
-def show_category_spare_parts_dvs():
-    category = bl.get_category_spare_part_dvs()
-    show_data(category)
-
-
-def show_basket5():
-    basket1 = show_basket()
-    basket2 = show_basket1()
-    basket3 = show_basket2()
-    res = (basket3, basket2, basket1)
-    show_data(res)
-
-
 def add_spare_part():
     category = show_query("Введите категорию запчасти:\n")
     title = show_query("Введите новое название запчасти:\n")
     kod = show_query("Введите код запчасти:\n")
     price = show_query('Введите цену для запчасти:\n')
-
     res = bl.add_spare_part(category, title, kod, price)
     show_data(res)
 
@@ -79,55 +55,19 @@ def add_spare_part():
 def main_flow():
     while True:
         chosed_action = show_query(
-            "Введите номер вашей операции:\n0.Выход\n1.Показать все запчасти\n2.Выбрать категорию запчастей\n3.Добавитьтк новую запчасть\n4.Остатки товара на складе\n5.Корзина\n")
+            "Введите номер вашей операции:\n0.Выход\n1.Показать все запчасти\n2.Выбрать категорию запчастей\n3.Добавить новую запчасть\n4.Остатки товара на складе\n5.Добавить в корзину\n6.Корзина\n")
         if chosed_action == '0':
             break
         elif chosed_action == '1':
             show_all_spare_parts()
         elif chosed_action == '2':
-            category = show_query("\n0.Выход\n1.Кузов\n2.Кпп\n3.Двс\nВведите номер вашей операции:\n")
-            show_data(category)
-            if category == '0':
-                show_data(main_flow())
-            elif category == '1':
-                if category == '0':
-                    category = show_query("\n0.Выход\n1.Кузов\n2.Кпп\n3.Двс\nВведите номер вашей операции:\n")
-                    show_data(category)
-                elif category == '1':
-                    show_data(show_category_spare_parts_kyzov())
-                    category = show_query('\n0.Выход\n1.Добавить в корзину?\n')
-                    show_data(category)
-                    if category == '1':
-                        show_basket1()
-
-            elif category == '2':
-                if category == '0':
-                    category = show_query("\n0.Выход\n1.Кузов\n2.Кпп\n3.Двс\nВведите номер вашей операции:\n")
-                    show_data(category)
-                elif category == '2':
-                    show_data(show_category_spare_parts_kpp())
-                    category = show_query('\n0.Выход\n1.Добавить в корзину?\n')
-                    show_data(category)
-                    if category == '1':
-                        show_basket()
-
-
-
-            elif category == '3':
-                if category == '0':
-                    category = show_query("\n0.Выход\n1.Кузов\n2.Кпп\n3.Двс\nВведите номер вашей операции:\n")
-                    show_data(category)
-                elif category == '3':
-                    show_data(show_category_spare_parts_dvs())
-                    category = show_query('\n0.Выход\n1.Добавить в корзину?\n')
-                    show_data(category)
-                    if category == '1':
-                        show_basket2()
-
+            show_category_spare_parts()
         elif chosed_action == '3':
             add_spare_part()
         elif chosed_action == '4':
             show_remais()
         elif chosed_action == '5':
-            show_basket5()
-            show_data(checkout())
+            dob()
+        elif chosed_action == '6':
+            show_basket()
+            checkout()
