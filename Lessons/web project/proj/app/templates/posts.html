@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Posts</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
     {% for post in posts %}
     <div>
         <a href="{% url 'post' post.id %}">
@@ -14,5 +10,4 @@
         <img width="50%" src="{{ post.image.url }}">
     </div>
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
