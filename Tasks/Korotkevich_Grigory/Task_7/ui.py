@@ -1,4 +1,4 @@
-import bl_catalog
+import bl
 
 def show_data(data):
     print(data)
@@ -19,23 +19,23 @@ def show_data(final_order):
     print(final_order)
 
 def show_all_catalog():
-    data = bl_catalog.get_all()
+    data = bl.get_all()
     show_data(data)
 
 def show_category_catalog():
-    data_ = bl_catalog.get_category()
+    data_ = bl.get_category()
     show_data(data_)
 
 def show_input_category_catalog():
-    data_input = bl_catalog.get_input_category()
+    data_input = bl.get_input_category()
     show_data(data_input)
 
 def add_order():
-    order = bl_catalog.add_order_dictionary()
+    order = bl.add_order_dictionary()
     show_data(order) 
 
 def print_final_order():
-    final_order = bl_catalog.print_final_order_user()
+    final_order = bl.print_final_order_user()
     show_data(final_order) 
 
 def main_flow():
