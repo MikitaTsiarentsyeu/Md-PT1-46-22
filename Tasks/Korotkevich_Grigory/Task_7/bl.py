@@ -15,9 +15,11 @@ def get_input_category():
 
 def add_order_dictionary():
     new_order = data.get_new_order()
+
     return new_order
 
 
 def print_final_order_user():
+
     final_order_print = data.get_final_order()
     return final_order_print 
