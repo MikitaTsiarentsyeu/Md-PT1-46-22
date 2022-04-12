@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="card container" >
+    <img class="card-img-top" src="{{recipe.image.url}}" alt="recipe">
+    <div class="card-body">      
+      <p class="card-text"> <p class= "fw-bold">{{recipe.ingridients|capfirst}}</p> </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{recipe.recipe|capfirst}}</li>      
+    </ul>
+    <div class="card-body text-center">
+        <a class="p-0" href= "{% url 'recipe'%}">
+            <img src="{% static 'img/gen.Gif' %}" alt="Base"  width=300/>
+        </a>
+    </div>
+  </div>
+{% endblock content %}
+
+
