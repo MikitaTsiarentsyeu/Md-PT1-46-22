@@ -1,0 +1,26 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    {% if view.count > 0 %}
+        <h2>Users'comments</h2>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Comment</th>
+            </tr>
+            {% for x in view %}
+            <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.full_name }}</td>
+            <td>{{ x.email}}</td>
+            <td>{{ x.content }}</td>
+            </tr>
+             {% endfor %}
+        </table>
+    {% endif %}
+{% endblock content %}

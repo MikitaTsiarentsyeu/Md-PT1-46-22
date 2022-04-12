@@ -1,0 +1,22 @@
+{% extends "basic.html" %}
+{% load static %}
+
+{% block content %}
+
+<h3> GET IN TOUCH </h3>
+<hr/>
+    {% for message in messages%}
+    <p>{{message}}</p>
+    {% endfor %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{call.as_table}}
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>   
+    </table>
+</form>
+{% endblock content %}
