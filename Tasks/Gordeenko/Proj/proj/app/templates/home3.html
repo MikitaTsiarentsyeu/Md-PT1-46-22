@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="contentplanner">
+<table style width='1580px' height="666px">
+    <tr>
+        <td width="50%"></td>
+        <td><h2><p>Travel request form</p><h2></td>
+    
+    </tr>
+    <tr>
+        <td width="50%"></td>
+        <td>
+            <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Add</button>
+        </td>
+    </tr>
+   
+</table> </div>
+
+{% endblock content %}    

@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    </head>
+    <body>
+        <div id ="header"
+            <a style="width: 90%;" href="{% url 'home' %}"><h1 id="logo"></h1></a>
+            <a href="{% url 'home' %}">
+            <img src="{% static 'app/img/logo.png' %}" alt="logo_icon" width="10%">
+          </a>  
+         
+            <div class="font-effect">
+                <h1>PATRICIA BAKES</h1>
+                </div>
+        </div>
+        
+        <div class="navigation">
+            <a href="{% url 'home' %}">HOME</a>                
+            <a href="{% url 'portfolio' %}">PORTFOLIO</a>
+            <a href="{% url 'all_comments' %}">FEEDBACK</a>
+            <a href="{% url 'feedback' %}">ADDCOMMENT</a>
+            <a href="{% url 'about' %}">ABOUT ME</a>
+        </div>
+
+        <div id="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        {% block footer %}
+        <div class ="footer">
+            <p>powered by Nadia Voleyko</p>
+            <div class= "icon">
+            <a href="https://www.instagram.com">
+                <img src="{% static 'app/img/insta.png' %}" alt="insta_icon" width="5.4%">
+              </a>  
+              <a href="#">
+                <img src="{% static 'app/img/teleg.png' %}" alt="teleg_icon" width="4%">
+              </a>  
+              <span><a href="tel:+375257776655"><img src="{% static 'app/img/call.png' %}" alt='call_icon' width='4%'></a></span>
+            </div>
+        </div>
+        </div>
+        {% endblock footer %}
+    </body>
+</html>

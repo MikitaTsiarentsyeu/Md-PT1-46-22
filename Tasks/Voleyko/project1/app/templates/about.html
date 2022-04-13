@@ -1,0 +1,16 @@
+{%extends 'basic.html'%}
+{%load static%}
+
+{% block content %}
+<h1> Hi, I&rsquo;m Patricia! </h1>
+<div class="about_page">
+<p><img src="{% static 'app/img/chef.jpg' %}" alt="Chef" style="width:30%; float:left; margin:7px7px7px0">
+Patricia Bakers is Canada&rsquo;s baking sweetheart,<br> and with her positive and common sense approach in the kitchen,she has become one of the country&rsquo;s most recognizable chefs. Hosting Food Network&rsquo;s “Bake with Patricia Bakes”, “Fresh with Patricia Olson”, and “Sugar”, she has earned a loyal following in over 190 countries and can now be watched on the Oh Yum YouTube Channel as well as on her latest series, “Inspired with Patricia Bakes”. An expert in writing recipes with a practical sense, her work appears in magazines and best-selling cookbooks, including translation into Spanish. Her latest title is the “Bake with Patricia Bakes Cookbook”. Both the Ontario Hostelry Institute and the Canadian Food & Wine Institute have recognized her for ongoing contributions to the development of Canadian food culture.
+Patricia was born in Atlanta, Georgia, but grew up in Toronto, noting her grandmother as an early influencer of her love of the kitchen. She has degrees from Queen&rsquo;s University in Kingston, Ontario and Johnson and Wales University in Vail, Colorado. After working in the United States, Patricia returned to Canada to settle in Niagara&rsquo;s wine country with her chef husband Michael Bakers.
+An avid promoter of the local movement, she practices shopping for great local ingredients and works under the motto “what grows together, goes together”. Patricia is an ongoing student of food and cooking, now working full time on recipe development, writing and hosting food media online and television. Many local charitable organizations benefit from her ongoing contributions to the community. 
+</p>
+</div>
+
+<button type="button" onclick="alert('Thank you!')">Click Me!</button>
+
+{% endblock content %}

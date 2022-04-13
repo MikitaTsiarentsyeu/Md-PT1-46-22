@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container text-center">
+    <img src="{% static 'img/main.png' %}"  alt="main" width=70%>
+    <div class="card-body text-center">
+      <h3 class="card-title">Нажми кнопку рандом и получи рецепт твоего вкусного ужина!</h3>           
+    </div>
+  
+  <div class="text-center">
+  <a class="p-0" href= "{% url 'recipe'%}">
+      <img src="{% static 'img/gen.Gif' %}" alt="Base"  width=300/>
+   </a>
+</div> 
+</div> 
+{% endblock content %}
+
+
+
