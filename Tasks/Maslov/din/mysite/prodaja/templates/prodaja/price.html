@@ -1,0 +1,11 @@
+{% extends "app/first.html" %}
+{% block content %}
+<div  class="center">
+<h1>Товары в наличии:</h1>
+{% for post in object_list %}
+<strong><h4>{{post}}</h4></strong> <br>
+<h8>{{post.date|date:"Добавлен d-m-Y"}}<p> <br>
+<a href="/">добавить в корзину</a></p></h8>
+{% endfor %}
+</div>
+{% endblock  %}
