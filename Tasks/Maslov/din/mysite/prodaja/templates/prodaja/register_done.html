@@ -1,0 +1,7 @@
+{% extends "app/first.html" %}
+
+
+{% block content %}
+<h1>Привет {{ new_user.first_name }}!</h1>
+ <h5><a href="{% url "home" %}">log in</a>.</h5>
+{% endblock %}
