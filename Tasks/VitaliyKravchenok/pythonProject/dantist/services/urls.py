@@ -1,0 +1,10 @@
+from django.urls import path
+from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+urlpatterns = [
+    path('', views.services, name='services'),
+    path('<int:pk>', views.ServicesDetailView.as_view(), name='service_detail')
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+</head>
+<body>
+
+    <div class="navbar1">
+        <a href="{% url 'home' %} "><img src="{% static 'main/img/logo_1.png' %}" style="width: 15vw"></a>
+        <ul class="navbar_ul" style="width: 75%">
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'services' %}">Services</a>
+                </li>
+                <li>
+                    <a href="{% url 'about_us' %}">About Us</a>
+                </li>
+                <li>
+                    <a href="{% url 'comments' %}">Reviews</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </li>
+            </ul>
+    </div>
+    <header class="header">
+        <div class="container">
+            <h1>We care about your smile</h1>
+        </div>
+    </header>
+    <main class="main">
+        {% block content%}
+        {% endblock %}
+    </main>
+    <footer class="footer">
+        <div>
+            <ul class="footer">
+                <li>
+                    <a href="#">
+                        <img src="{% static 'main/img/github-48.png' %} ">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'main/img/twitter-48.png' %}">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'main/img/facebook-48.png' %}">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'main/img/whatsapp-48.png' %}">
+                    </a>
+                </li>
+                <li style="padding-right: 0vw">
+                    <a href="#">
+                        <img src="{% static 'main/img/gmail-48.png' %}">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
