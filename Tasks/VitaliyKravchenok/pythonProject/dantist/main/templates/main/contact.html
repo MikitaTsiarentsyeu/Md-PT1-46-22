@@ -1,0 +1,74 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content%}
+    <div id="comments" style="font-family: 'Roboto Light'; font-size: 1.2vw;">
+        <section style="height: 220px;">
+            <br>
+            <h3>Address</h3>
+            <div class="vcard">
+                <span class="org">Birch Valley Dental Clinic</span>
+                <div class="adr">
+                    <span class="street-address">273 High Street</span>
+                    <span class="locality">Dalbeattie</span>
+                    <span class="region">Dumfries &amp; Galloway</span>
+                    <span class="postal-code">DG5 4DW</span>
+                    <span class="tel">01556 610917</span>
+                </div>
+            </div>
+        </section>
+        <section style="height: 220px;">
+            <h3>Opening Hours</h3><table>
+                <thead>
+
+                </thead>
+                <tbody><tr>
+                    <td>Monday</td>
+                    <td>08.30</td>
+                    <td>-</td>
+                    <td>17.30</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>08.30</td>
+                    <td>-</td>
+                    <td>20.30</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>08.30</td>
+                    <td>-</td>
+                    <td>17.30</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>08.30</td>
+                    <td>-</td>
+                    <td>20.30</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>08.30</td>
+                    <td>-</td>
+                    <td>17.30</td>
+                </tr>
+                <tr class="wknd">
+                    <td>Saturday</td>
+                    <td colspan="3">Closed</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td colspan="3">Closed</td>
+                </tr>
+            </tbody></table>
+        </section>
+        <section style="height: 220px;">
+            <h3>Out-of-hours</h3>
+            <p>Should you have a dental emergency outside of clinic hours, please telephone the practice 01556 610 917 and the answerphone service will give you further instructions.</p>
+        </section>
+    </div>
+{% endblock %}
+#{% include 'main/services.html' %}
+    {% include 'main/about.html' %}
+    {% include 'main/contact.html' %}

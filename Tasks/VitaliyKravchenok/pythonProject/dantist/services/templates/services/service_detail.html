@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ service.service_name }}{% endblock %}
+
+{% block content%}
+        <div class="main_services">
+            <h1>{{ service.service_name }}</h1>
+            <div>
+                 <figure class="serv_block">
+                     <p style="width: 48%">{{ service.full_text_serv }}</p>
+                     <img src="{{ service.image_serv }}" style="width: 50%">
+                 </figure>
+            </div>
+        </div>
+{% endblock %}

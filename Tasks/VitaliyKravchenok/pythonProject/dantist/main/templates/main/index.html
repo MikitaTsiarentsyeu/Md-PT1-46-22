@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content%}
+    <div id="frame_home">
+        <ul id="frame_ul">
+            <li>Award-winning dental clinic in South West Scotland</li>
+            <li>Comprehensive range of private dental services including cosmetic dentistry facial aesthetics</li>
+            <li>Pay-as-you-go payment packages and affordable dental care plans available</li>
+            <li>We are currently registering new patients</li>
+        </ul>
+        <img src="{% static 'main/img/home-poster.jpeg' %}" style="padding-left: 35vw; width: 90vw;">
+    </div>
+{% endblock %}

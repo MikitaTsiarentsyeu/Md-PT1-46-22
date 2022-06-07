@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Add_review{% endblock %}
+
+{% block content%}
+    <div id="comments">
+        <h1>Leave your review</h1>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <ul style="padding-left: 0px;">
+                    <li style="display: flex; align-items: stretch; flex-direction: column; font-size: 1.7vw;"><h4 style="font-size: 2vw;">Your name:</h4>{{ form.author }}</li>
+                    <li style="display: flex; align-items: stretch; flex-direction: column; font-size: 1.7vw;"><h4 style="font-size: 2vw;">Your email:</h4>{{ form.author_email }}</li>
+                    <li style="display: flex; align-items: stretch; flex-direction: column; font-size: 1.7vw;"><h4 style="font-size: 2vw;">Your review:</h4>{{ form.review_text }}</li>
+                </ul>
+                <button type="submit" style="font-size: 2vw;">Send</button>
+            </form>
+        <br>
+    </div>
+{% endblock %}
+
+style="
+    display: flex;
+    flex-direction: column;
+"

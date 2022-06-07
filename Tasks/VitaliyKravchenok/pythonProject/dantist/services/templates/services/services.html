@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Services{% endblock %}
+
+{% block content%}
+        <div class="main_services">
+            <h1>Services</h1>
+            <h4>
+                We offer a range of private cosmetic dentistry procedures including veneers,
+                tooth whitening, crowns and bridges and white fillings.
+                These cosmetic dental treatments are now more popular than ever before,
+                as an increasing amount of people recognise that having beautiful teeth is an easy
+                and effective way to improve their appearance and self-confidence.</h4>
+            <div>
+            {% if service %}
+                {% for el in service %}
+                 <h2 class="inline-title">{{ el.service_name }}</h2>
+                 <figure class="serv_block">
+                     <p style="width: 48%">{{ el.preview_serv }} <br><a href="{% url 'service_detail' el.id %}">Read more...</a></p>
+                     <img src="{{ el.image_serv }}" style="width: 50%">
+                 </figure>
+                {% endfor %}
+            {% else %}
+                <p>Services not found</p>
+            {% endif %}
+            </div>
+        </div>
+{% endblock %}
